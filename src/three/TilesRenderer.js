@@ -693,6 +693,7 @@ export class TilesRenderer extends TilesRendererBase {
 			// 3DTILES_content_gltf
 			case 'gltf':
 			case 'glb':
+			case 'glTF':
 				const loader = new GLTFExtensionLoader( manager );
 				loader.workingPath = workingPath;
 				loader.fetchOptions = fetchOptions;

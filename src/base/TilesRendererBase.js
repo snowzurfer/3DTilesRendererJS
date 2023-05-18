@@ -183,15 +183,19 @@ export class TilesRendererBase {
 			// Fix old file formats
 			if ( ! ( 'uri' in tile.content ) && 'url' in tile.content ) {
 
+				// console.log( 'TileRendererBase, first case, tile.content.url is ', tile.content.url );
 				tile.content.uri = tile.content.url;
+				// console.log( 'TileRendererBase, first case setting tile.content.uri to ', tile.content.uri )
 				delete tile.content.url;
 
 			}
 
 			if ( tile.content.uri ) {
 
+				// console.log( 'TileRendererBase, second case tile.content.uri is ', tile.content.uri, ' and tileSetDir is ', tileSetDir );
 				// tile content uri has to be interpreted relative to the tileset.json
 				tile.content.uri = new URL( tile.content.uri, tileSetDir + '/' ).toString();
+				// console.log( 'TileRendererBase, second case setting tile.content.uri to ', tile.content.uri );
 
 			}
 
